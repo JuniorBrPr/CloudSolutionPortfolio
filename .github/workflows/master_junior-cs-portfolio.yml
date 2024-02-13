@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_be08585bc7fd44fc9f32bd093c3e6ac1 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_9d73223137124820acd690ea15917b68 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_220813c215ee460586220b73cc618a06 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_4549dba2844a49c5a775ab8e4e629082 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_be08585bc7fd44fc9f32bd093c3e6ac1 }}/juniorbrpr/portfolio:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_220813c215ee460586220b73cc618a06 }}/juniorbrpr/portfolio:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'junior-cs-portfolio'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_352bfe639eac41c4a6a4ea181b727d3d }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_be08585bc7fd44fc9f32bd093c3e6ac1 }}/juniorbrpr/portfolio:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_d3a1b981ca7d4af19ae7e41c59cbdfe5 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_220813c215ee460586220b73cc618a06 }}/juniorbrpr/portfolio:${{ github.sha }}'
