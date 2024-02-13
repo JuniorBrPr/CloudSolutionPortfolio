@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_220813c215ee460586220b73cc618a06 }}/juniorbrpr/portfolio:latest
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_220813c215ee460586220b73cc618a06 }}/portfolio:latest
         file: ./Dockerfile
 
   deploy:
